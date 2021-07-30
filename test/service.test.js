@@ -25,7 +25,7 @@ describe("topPoster()", () => {
               {
                 "userId": 7,
                 "id": 2,
-                "title": "qui est esse",
+                "title": "magnam facilis autem",
                 "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
               }
             ]
@@ -33,7 +33,8 @@ describe("topPoster()", () => {
         );
       });
       const result = await topPoster();
-      expect(result).toBe(7);
+      const expectation = ["qui est esse", "magnam facilis autem"]
+      expect(result).toEqual(expectation);
     })
 
     it('should give error when a problem occur while fetching user posts', async () => {

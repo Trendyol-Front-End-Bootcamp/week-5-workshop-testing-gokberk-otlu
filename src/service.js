@@ -12,7 +12,13 @@ export const topPoster = async () => {
       }
       let userPostsLength = userPosts.length;
       const topPoster = mostFrequent(userPosts, userPostsLength);
-      return topPoster;
+      const topPosterTitles = [];
+      for(let i = 0; i < result.data.length; i++) {
+        if(result.data[i].userId === topPoster) {
+          topPosterTitles.push(result.data[i].title);
+        }
+      }
+      return topPosterTitles;
     } catch (err) {
       return err;
     }
